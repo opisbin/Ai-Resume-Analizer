@@ -233,16 +233,29 @@ export const prepareInstructions = ({
 }: {
   jobTitle: string;
   jobDescription: string;
-}) =>
-  `You are an expert in ATS (Applicant Tracking System) and resume analysis.
+}) => {
+  // Get the current date in YYYY-MM-DD format
+  const currentDate = new Date().toISOString().split("T")[0];
+
+  return `You are an expert in ATS (Applicant Tracking System) and resume analysis.
+
+  CRITICAL DATE CONTEXT: Today's date is ${currentDate}. This means:
+  - Any dates in 2024 or earlier are in the PAST
+  - June 2025 is in the PAST (it's already September 2025)
+  - October 2024 is in the PAST
+  - Only dates after ${currentDate} should be considered future dates
+  - DO NOT flag June 2025 or October 2024 as future dates - they are PAST dates
+
   Please analyze and rate this resume and suggest how to improve it.
   The rating can be low if the resume is bad.
   Be thorough and detailed. Don't be afraid to point out any mistakes or areas for improvement.
   If there is a lot to improve, don't hesitate to give low scores. This is to help the user to improve their resume.
   If available, use the job description for the job user is applying to to give more detailed feedback.
   If provided, take the job description into consideration.
+
   The job title is: ${jobTitle}
   The job description is: ${jobDescription}
   Provide the feedback using the following format: ${AIResponseFormat}
   Return the analysis as a JSON object, without any other text and without the backticks.
   Do not include any other text or comments.`;
+};
