@@ -71,8 +71,3 @@ MIT © [opisbin](https://github.com/opisbin)
 ---
 
 > ✨ *Built with curiosity and code to make job hunting easier.*
-
-```
-
-Would you like me to style it a bit more (like adding emojis for each section and a banner/header image placeholder)?
-```
