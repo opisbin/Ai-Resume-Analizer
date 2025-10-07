@@ -1,6 +1,3 @@
-Got it 👍 — here’s a **clean, minimal, and elegant** version of your README that looks great on GitHub while staying professional and easy to read:
-
-````markdown
 # 🧠 AI Resume Analyzer
 
 AI-powered tool that helps job seekers improve their resumes with intelligent insights and keyword analysis.
